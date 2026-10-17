@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "hero": {
+      "type": "section-custom-hero"
+    },
+    "synergy": {
+      "type": "section-custom-synergy"
+    },
+    "product_info": {
+      "type": "section-custom-product-info"
+    },
+    "bundles": {
+      "type": "section-custom-bundles"
+    },
+    "faq": {
+      "type": "section-custom-faq"
+    },
+    "order_popup": {
+      "type": "section-custom-order-popup"
+    }
+  },
+  "order": [
+    "hero",
+    "synergy",
+    "product_info",
+    "bundles",
+    "faq",
+    "order_popup"
+  ]
+}

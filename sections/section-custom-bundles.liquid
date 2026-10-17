@@ -1,0 +1,54 @@
+{% schema %}
+{
+  "name": "Custom Bundles",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Custom Bundles"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="custom-bundles-section" style="background-color: #f9f9f9; padding: 50px 20px; direction: rtl;" id="bundles">
+  <h2 style="text-align: center; color: #333; margin-bottom: 40px;">الباقات والأسعار</h2>
+
+  <div class="bundles-container" style="max-width: 1000px; margin: auto; display: flex; flex-direction: column; gap: 20px;">
+
+    <!-- Bundle 1 -->
+    <div class="bundle-card" style="background: #fff; border: 2px solid #eaeaea; border-radius: 10px; padding: 20px; text-align: center;">
+      <h3 style="color: #333; margin-bottom: 10px;">باقة 1</h3>
+      <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">1 كولاجين (بدون هدية)</p>
+      <div style="font-size: 2rem; font-weight: bold; color: #000; margin-bottom: 20px;">229 DH</div>
+      <button onclick="selectBundle('Pack 1', 229)" style="background-color: #000; color: #fff; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; width: 100%;">اطلب هذه الباقة</button>
+    </div>
+
+    <!-- Bundle 2 -->
+    <div class="bundle-card highlight" style="background: #fff; border: 2px solid #28a745; border-radius: 10px; padding: 20px; text-align: center; position: relative;">
+      <div style="position: absolute; top: -15px; right: 50%; transform: translateX(50%); background: #28a745; color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;">اختيار متوازن</div>
+      <h3 style="color: #333; margin-bottom: 10px; margin-top: 10px;">باقة 2</h3>
+      <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">2 كولاجين + 1 فيتامين C هدية 🎁</p>
+      <div style="font-size: 2rem; font-weight: bold; color: #28a745; margin-bottom: 20px;">379 DH</div>
+      <button onclick="selectBundle('Pack 2', 379)" style="background-color: #28a745; color: #fff; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; width: 100%;">اطلب هذه الباقة</button>
+    </div>
+
+    <!-- Bundle 3 -->
+    <div class="bundle-card" style="background: #fff; border: 2px solid #eaeaea; border-radius: 10px; padding: 20px; text-align: center;">
+      <h3 style="color: #333; margin-bottom: 10px;">باقة 3</h3>
+      <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">3 كولاجين + 2 فيتامين C هدية 🎁🎁</p>
+      <p style="color: #d9534f; font-size: 0.9rem; margin-bottom: 10px;">أقل ثمن لكل علبة كولاجين</p>
+      <div style="font-size: 2rem; font-weight: bold; color: #000; margin-bottom: 20px;">499 DH</div>
+      <button onclick="selectBundle('Pack 3', 499)" style="background-color: #000; color: #fff; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; width: 100%;">اطلب هذه الباقة</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function selectBundle(bundleName, price) {
+    // Logic to open order form popup and pre-fill bundle data
+    document.getElementById('selected_bundle').value = bundleName;
+    document.getElementById('total_price').innerText = price + ' DH';
+    openOrderPopup();
+  }
+</script>

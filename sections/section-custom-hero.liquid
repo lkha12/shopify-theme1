@@ -1,0 +1,45 @@
+{% schema %}
+{
+  "name": "Custom Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "كولاجين بحري"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "العرض المتكامل مع فيتامين سي والسبيرولينا"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "اطلب الآن"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Hero"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="custom-hero-section" style="background-color: #fff; padding: 40px 20px; text-align: center; direction: rtl;">
+  <div class="hero-content">
+    <h1 style="font-size: 2.5rem; color: #333; margin-bottom: 10px;">{{ section.settings.heading }}</h1>
+    <p style="font-size: 1.2rem; color: #666; margin-bottom: 20px;">{{ section.settings.subheading }}</p>
+
+    <div class="hero-image" style="margin-bottom: 30px;">
+      <img src="{{ 'mockup-capsule-main.png' | asset_url }}" alt="Collagene Marin" style="max-width: 100%; height: auto; border-radius: 8px;">
+    </div>
+
+    <button class="cta-button" onclick="document.getElementById('bundles').scrollIntoView({behavior: 'smooth'})" style="background-color: #000; color: #fff; padding: 15px 30px; font-size: 1.2rem; border: none; border-radius: 5px; cursor: pointer; width: 100%; max-width: 300px;">
+      {{ section.settings.button_label }}
+    </button>
+  </div>
+</div>

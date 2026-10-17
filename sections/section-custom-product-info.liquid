@@ -1,0 +1,32 @@
+{% schema %}
+{
+  "name": "Custom Product Info",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Custom Product Info"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="custom-product-info" style="background-color: #fff; padding: 40px 20px; direction: rtl;">
+  <div class="info-container" style="max-width: 800px; margin: auto;">
+    <h2 style="text-align: center; color: #333; margin-bottom: 30px;">شنو هو Collagène Marin؟</h2>
+
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+      <img src="{{ 'mockup-capsule-left-1.png' | asset_url }}" alt="Collagene Marin Details" style="max-width: 250px; border-radius: 8px;">
+
+      <div style="text-align: right; width: 100%;">
+        <p style="color: #555; line-height: 1.8; font-size: 1.1rem;">
+          الكولاجين البحري هو بروتين طبيعي مستخلص من الأسماك، يساهم في دعم صحة البشرة، الشعر، والأظافر والمفاصل.
+        </p>
+        <ul style="color: #555; line-height: 1.8; list-style-type: disc; margin-right: 20px;">
+          <li><strong>المكونات:</strong> كولاجين بحري نقي 100%</li>
+          <li><strong>الكمية:</strong> 30 كبسولة في العلبة</li>
+          <li><strong>الجرعة الموصى بها:</strong> كبسولة واحدة يومياً مع كوب من الماء</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

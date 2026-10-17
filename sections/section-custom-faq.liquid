@@ -1,0 +1,59 @@
+{% schema %}
+{
+  "name": "Custom FAQ",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Custom FAQ"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="custom-faq-section" style="background-color: #fff; padding: 50px 20px; direction: rtl;">
+  <div class="faq-container" style="max-width: 800px; margin: auto;">
+    <h2 style="text-align: center; color: #333; margin-bottom: 40px;">الأسئلة الشائعة</h2>
+
+    <div class="faq-item" style="border-bottom: 1px solid #ddd; padding: 15px 0;">
+      <h4 style="margin: 0; cursor: pointer; color: #000; font-size: 1.1rem;" onclick="toggleFaq(this)">شنو الفرق بين الكولاجين البحري وأنواع الكولاجين الأخرى؟ <span>+</span></h4>
+      <div class="faq-answer" style="display: none; padding-top: 10px; color: #555; line-height: 1.6;">
+        الكولاجين البحري يُمتص بشكل أسرع وأكثر فعالية في الجسم مقارنة بالأنواع الأخرى بفضل صغر حجم جزيئاته.
+      </div>
+    </div>
+
+    <div class="faq-item" style="border-bottom: 1px solid #ddd; padding: 15px 0;">
+      <h4 style="margin: 0; cursor: pointer; color: #000; font-size: 1.1rem;" onclick="toggleFaq(this)">واش خاصني ناخد فيتامين C مع الكولاجين؟ <span>+</span></h4>
+      <div class="faq-answer" style="display: none; padding-top: 10px; color: #555; line-height: 1.6;">
+        نعم، فيتامين C ضروري كمحفز ليقوم الجسم بامتصاص وتثبيت الكولاجين. لهذا السبب نقدمه كهدية في باقاتنا المتعددة (الباقة 2 و 3) لضمان أفضل نتيجة.
+      </div>
+    </div>
+
+    <div class="faq-item" style="border-bottom: 1px solid #ddd; padding: 15px 0;">
+      <h4 style="margin: 0; cursor: pointer; color: #000; font-size: 1.1rem;" onclick="toggleFaq(this)">شحال كتدوم كل باقة حسب الجرعة المكتوبة؟ <span>+</span></h4>
+      <div class="faq-answer" style="display: none; padding-top: 10px; color: #555; line-height: 1.6;">
+        كل علبة تحتوي على 30 كبسولة تكفي لشهر واحد. الباقة الثانية تكفي لشهرين، بينما الباقة الثالثة تضمن لك الاستمرارية لثلاثة أشهر وهي الأوفر.
+      </div>
+    </div>
+
+    <div class="faq-item" style="border-bottom: 1px solid #ddd; padding: 15px 0;">
+      <h4 style="margin: 0; cursor: pointer; color: #000; font-size: 1.1rem;" onclick="toggleFaq(this)">كيفاش كيتدار الطلب، وشحال كياخد التوصيل؟ <span>+</span></h4>
+      <div class="faq-answer" style="display: none; padding-top: 10px; color: #555; line-height: 1.6;">
+        الطلب يتم بملء الاستمارة أسفل الشاشة، والدفع يكون عند الاستلام. التوصيل يستغرق عادة بين 24 إلى 48 ساعة.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleFaq(element) {
+    var answer = element.nextElementSibling;
+    var span = element.querySelector('span');
+    if (answer.style.display === "none") {
+      answer.style.display = "block";
+      span.innerText = "-";
+    } else {
+      answer.style.display = "none";
+      span.innerText = "+";
+    }
+  }
+</script>

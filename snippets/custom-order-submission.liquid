@@ -1,0 +1,53 @@
+<script>
+  function submitCustomOrder(e) {
+    e.preventDefault();
+
+    // Disable button to prevent double submission
+    var submitButton = e.target.querySelector('button[type="submit"]');
+    var originalText = submitButton.innerText;
+    submitButton.innerText = "جاري الإرسال...";
+    submitButton.disabled = true;
+
+    var bundleName = document.getElementById('selected_bundle').value;
+    var customerName = document.getElementById('customer_name').value;
+    var customerPhone = document.getElementById('customer_phone').value;
+    var customerAddress = document.getElementById('customer_address').value;
+
+    // Build the variant ID based on the bundle name
+    // (In a real scenario, you map bundleName to Shopify Variant IDs)
+    // For COD without a paid app, we can use the Storefront API or standard Cart API
+    // combined with a specialized COD checkout, or create a Draft Order via a custom App proxy.
+    // However, since we cannot easily create a draft order strictly from the frontend without a proxy,
+    // a common workaround for "Free COD Apps" is to add the item to cart with custom attributes
+    // and redirect to checkout with COD as the only payment method, OR send an email/webhook.
+
+    // For this specific requirement (avoiding apps and capturing lead directly):
+    // We will submit this form data as a Contact Form submission which Shopify natively supports,
+    // allowing the store owner to see the orders in their Customer emails/Contact list.
+
+    var formData = new FormData();
+    formData.append('form_type', 'contact');
+    formData.append('utf8', '✓');
+    formData.append('contact[name]', customerName);
+    formData.append('contact[phone]', customerPhone);
+    formData.append('contact[body]', 'New COD Order:\nBundle: ' + bundleName + '\nAddress: ' + customerAddress);
+
+    fetch('/contact', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      alert('تم تسجيل طلبك بنجاح! سنتصل بك قريباً لتأكيد الطلب.');
+      closeOrderPopup();
+      e.target.reset();
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.');
+    })
+    .finally(() => {
+      submitButton.innerText = originalText;
+      submitButton.disabled = false;
+    });
+  }
+</script>
